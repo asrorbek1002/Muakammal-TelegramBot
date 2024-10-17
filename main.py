@@ -2,8 +2,10 @@ from telegram import Update
 from telegram.ext import ContextTypes, CommandHandler, ApplicationBuilder
 import logging
 
+file_handler = logging.FileHandler('myapp.log') 
+
 # Log darajasini va formatini sozlaymiz
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, handlers=[file_handler], format='%(asctime)s - %(levelname)s - %(module)s - %(filename)s - %(message)s')
 
 
 
